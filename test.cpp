@@ -4,7 +4,6 @@
 #include <math.h>
 #include <cmath>
 #include "composite.h"
-#include "strategy.h"
 #include "component.h"
 #include "container.h"
 

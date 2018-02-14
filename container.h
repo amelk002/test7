@@ -1,6 +1,5 @@
 #ifndef __CONTAINER_H__
 #define __CONTAINER_H__
-#include "strategy.h"
 #include <iostream>
 #include <vector>
 #include <list>
@@ -19,7 +18,9 @@ class Container {
         /* Non Virtual Functions */
         // Set the type of sorting algorithm
         void set_sort_function(Sort* sort_function);
-
+        {
+        			this->sort_function = sort_function;
+        }
         /* Pure Virtual Functions */
         // insert the top pointer of the tree into the container
         virtual void add_element(Base* element) = 0;
@@ -37,7 +38,12 @@ class Container {
         // return container size;
         virtual int size() = 0;
 };
-
+class Sort
+{
+	public:
+	    Sort() {};
+		virtual void sort(Container* container) = 0;
+};
 class VectorContainer : public Container
 {
 	protected:
@@ -187,7 +193,6 @@ class SelectionSort : public Sort
 			}
 		}
 };
-
 class BubbleSort : public Sort
 {
 	protected:
