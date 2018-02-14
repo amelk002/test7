@@ -13,13 +13,13 @@ class composite : public Base{
 };
 
 
-class Operand : public Base
+class Op : public Base
 {
 	protected:
 		double number;
 	public:
-		Operand(): number(0) {}
-		Operand(double x): number(x) {}
+		Op(): number(0) {}
+		Op(double x): number(x) {}
 		double evaluate()
 		{
 			return number;
@@ -38,52 +38,52 @@ class Add : public Base
 			return this->left->evaluate() + this->right->evaluate();
 		}
 };
-class Subtract : public Base
+class Sub : public Base
 {
 	protected:
 		Base* left;
 		Base* right;
 	public:
-		Subtract(): left(NULL), right(NULL) {}
-		Subtract(Base* left, Base* right): left(left), right(right) {}
+		Sub(): left(NULL), right(NULL) {}
+		Sub(Base* left, Base* right): left(left), right(right) {}
 		double evaluate()
 		{
 			return this->left->evaluate() - this->right->evaluate();
 		}
 };
-class Multiply : public Base
+class Mult : public Base
 {
 	protected:
 		Base* left;
 		Base* right;
 	public:
-		Multiply(): left(NULL), right(NULL) {}
-		Multiply(Base* left, Base* right): left(left), right(right) {}
+		Mult(): left(NULL), right(NULL) {}
+		Mult(Base* left, Base* right): left(left), right(right) {}
 		double evaluate()
 		{
 			return this->left->evaluate() * this->right->evaluate();
 		}
 };
-class Division : public Base
+class Div : public Base
 {
 	protected:
 		Base* left;
 		Base* right;
 	public:
-		Division(): left(NULL), right(NULL) {}
-		Division(Base* left, Base* right): left(left), right(right) {}
+		Div(): left(NULL), right(NULL) {}
+		Div(Base* left, Base* right): left(left), right(right) {}
 		double evaluate()
 		{
 			return this->left->evaluate() / this->right->evaluate();
 		}
 };
-class Squared : public Base
+class Sqr : public Base
 {
 	protected:
 		Base* child;
 	public:
-		Squared(): child(NULL) {}
-		Squared(Base* one): child(one) {}
+		Sqr(): child(NULL) {}
+		Sqr(Base* one): child(one) {}
 		double evaluate()
 		{
 			return this->child->evaluate() * this->child->evaluate();
