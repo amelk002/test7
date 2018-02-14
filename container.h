@@ -6,7 +6,7 @@
 #include <math.h>
 #include <cmath>
 
-class Sort
+class Sort;
 class Container {
     protected:
         Sort* sort_function;
