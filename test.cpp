@@ -24,7 +24,7 @@ int main() {
     cout << C->evaluate() << endl;
     cout << D->evaluate() << endl;
    VectorContainer* container = new VectorContainer();
-   ListContainer* container = new ListContainer();
+   ListContainer* container1 = new ListContainer();
    container->add_element(A);
    container->add_element(B);
    container->add_element(D);
